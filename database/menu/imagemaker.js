@@ -78,8 +78,10 @@ const imagemaker = (prefix, botName, ownerName) => {
    ┠≽ *${prefix}8bit* <text|text>
    ┃ *Desc* : Make 8 Bit Image
    ┠──────────────╼
-   ┠≽ *${prefix}herrypotter* <text>
+   ┠ ≽ *${prefix}herrypotter* <text>
    ┃ *Desc* : Make Herry Potter Image
+   ┠ ≽ *${prefix}tahta* <text>
+   ┃ *Desc* : Make Tahta Image
    ╿ *${ownerName}*,
    ╰╼≽ *Developer © ${botName}`
 }
