@@ -2705,6 +2705,44 @@ async function starts() {
                                         }
                                         await reply(lbw)
                                         break 
+                                case 'request':
+                    if (isBanned) return reply(mess.only.benned)    
+	            if (!isRegister) return reply(mess.only.daftarB)
+                     const cfrr = body.slice(9)
+                      if (cfrr.length > 300) return nzwa.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
+                        var nomor = mek.participant
+                       const ress = `*[REQUEST FITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
+
+                      var optionsp = {
+                         text: ress,
+                         contextInfo: {mentionedJid: [nomor]},
+                     }
+                    nzwa.sendMessage('6281220951879@s.whatsapp.net', optionsp, text, {quoted: mek})
+                    reply('REQUEST ANDA TELAH SAMPAI ke owner BOT, Requests palsu/main2 tidak akan ditanggapi.')
+                    break
+                                case 'tahta':
+                if (isBanned) return reply(mess.only.benned)    
+				if (!isRegister) return reply(mess.only.daftarB)
+					
+					if (args.length < 1) return reply('Teksnya mana kak? >.<')
+					teks = body.slice(7)
+					if (teks.length > 9) return reply('Teksnya kepanjangan, maksimal 9 karakter')
+					reply(mess.wait)
+					buffer = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${teks}&apikey=vinzapi`)
+					nzwa.sendMessage(from, buffer, image, {quoted: mek, caption: 'Harta Tahta '+teks})
+					break
+                                case 'ssweb':
+                if (!isRegister) return reply(mess.only.daftarB)
+                    if (isBanned) return reply(mess.only.benned)    
+                    if (isLimit(sender)) return reply(ind.limitend(pusname))
+					if (args.length < 1) return reply('Urlnya mana om')
+					teks = body.slice(7)
+					reply(ind.wait())
+					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
+					buff = await getBuffer(anu.gambar)
+					nzwa.sendMessage(from, buff, image, {quoted: mek})
+					await limitAdd(sender)
+					break
 			        case 'wait':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
                                         if (!isRegister) return reply(mess.only.daftarB)
