@@ -34,6 +34,7 @@ const other = (prefix, botName, ownerName) => {
    ┠≽ *${prefix}timer*
    ┠≽ *${prefix}fml*
    ┠≽ *${prefix}fml2*
+   ┠≽ *${prefix}ssweb*
    ╿ *${ownerName}*,
    ╰╼≽ *Developer © ${botName}`
 }
